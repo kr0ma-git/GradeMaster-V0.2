@@ -30,7 +30,7 @@ public class DashboardController {
         dashboardView.getSubjectButton().setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                new SubjectView("test@gmail.com").show();
+                new SubjectView(dashboardView.getEmail()).show();
             }
         });
     }

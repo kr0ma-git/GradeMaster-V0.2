@@ -39,7 +39,7 @@ public class UserController {
         logger.info("Getting user by email: " + email);
         Optional<User> userOptional = userService.getUserByEmail(email);
 
-        if (userOptional.isEmpty()) {
+        if (!userOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         } else {
             return ResponseEntity.status(HttpStatus.OK).body(userOptional.get());

@@ -29,9 +29,10 @@ public class SubjectViewController {
         subjectView.getDashboardButton().setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+
                 int subjectCount = SqlUtil.getSubjectCountForCurrentUser(user.getId());
                 int studentCount = SqlUtil.getStudentCountUnderUser(user.getId());
-                new DashboardView(user.getEmail(), subjectCount, studentCount).show();
+                new DashboardView(subjectView.getEmail(), subjectCount, studentCount).show();
             }
         });
     }
